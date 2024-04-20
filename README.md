@@ -54,7 +54,7 @@ Contributions to the project are welcome! Please follow the contribution guideli
 - Submit a pull request with a detailed description of your changes and the rationale behind them.
 
 ## License
-This project is licensed under the `[MIT License](LICENSE)`, which allows for free use, modification, and distribution of the codebase with appropriate attribution.
+This project is licensed under the `[GNU GENERAL PUBLIC LICENSE](LICENSE)`, which allows for free use, modification, and distribution of the codebase with appropriate attribution.
 
 ## Contact
 
