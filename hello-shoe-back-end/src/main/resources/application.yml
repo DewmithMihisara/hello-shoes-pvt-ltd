@@ -21,6 +21,6 @@ server:
   servlet:
     context-path: /hello_shoe
 
-#token:
-#  secret: 33hOIYlYkIjqYCZzWAXp+/ch/BwAiKKe8KOtf9vwdeWdopItEIXgrx+bBTOD1pNregwkMJkG8/1R5/Sn7nuw7A==
-#  expiration: 86400000
+token:
+  secret: 33hOIYlYkIjqYCZzWAXp+/ch/BwAiKKe8KOtf9vwdeWdopItEIXgrx+bBTOD1pNregwkMJkG8/1R5/Sn7nuw7A==
+  expiration: 86400000

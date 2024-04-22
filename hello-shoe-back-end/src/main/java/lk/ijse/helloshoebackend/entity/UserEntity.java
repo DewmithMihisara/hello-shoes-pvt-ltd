@@ -1,7 +1,9 @@
 package lk.ijse.helloshoebackend.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.helloshoebackend.util.Role;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
@@ -17,6 +19,7 @@ import java.time.LocalDateTime;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Entity
 @Table(name = "user")
 public class UserEntity {
@@ -29,6 +32,10 @@ public class UserEntity {
 
     @Column(name = "password")
     private String password;
+
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
 
     @CreationTimestamp
