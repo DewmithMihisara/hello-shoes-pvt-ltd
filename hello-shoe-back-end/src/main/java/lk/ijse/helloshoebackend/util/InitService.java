@@ -22,7 +22,6 @@ public class InitService {
             userRepository.save(
                     UserEntity.builder()
                             .id("usr-001")
-                            .name("admin")
                             .password("$2a$12$LO2YSeo9irJxjVGxyPX50uycBslOSfWdMDI8/2Aa0Ff5dbPtMaA5e") //Admin@123
                             .email("admin@gmail.com")
                             .role(Role.ROLE_ADMIN)
