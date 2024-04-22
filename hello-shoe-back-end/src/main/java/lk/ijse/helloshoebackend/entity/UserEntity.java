@@ -1,7 +1,8 @@
 package lk.ijse.helloshoebackend.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lk.ijse.helloshoebackend.util.Role;
+import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -10,6 +11,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author Dewmith Mihisara
@@ -35,8 +37,15 @@ public class UserEntity {
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
-    private Role role;
+    private Constants role;
 
+    @OneToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "emp_id")
+    private EmployeeEntity employeeEntity;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = CustomerEntity.class)
+    List<CustomerEntity> customerEntities;
 
     @CreationTimestamp
     @Column(name = "create_date", updatable = false, nullable = false)
@@ -54,6 +63,7 @@ public class UserEntity {
     @Column(name = "modify_by")
     private String modifyBy;
 
-    @Column(name = "is_active", columnDefinition = "TINYINT(1)")
-    private boolean isActive;
+    @Column(name = "is_active")
+    @Enumerated(EnumType.STRING)
+    private Constants isActive;
 }
