@@ -1,9 +1,6 @@
 package lk.ijse.helloshoebackend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
-import lk.ijse.helloshoebackend.entity.embedded.Address;
-import lk.ijse.helloshoebackend.entity.embedded.Contact;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -12,42 +9,56 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
-import java.util.List;
 
 /**
  * @author Dewmith Mihisara
  * @date 2024-04-23
  * @since 0.0.1
  */
-@Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Data
+@Table(name = "inventory")
 @Entity
-@Table(name = "suppliers")
-public class SuppliersEntity {
+public class InventoryEntity {
     @Id
-    @Column(name = "sup_id")
+    @Column(name = "itm_id")
     private String id;
 
-    @Column(name = "sup_name")
-    private String name;
+    @Column(name = "itm_desc")
+    private String description;
+
+    @Column(name = "itm_pic")
+    private String picture;
 
     @Column(name = "category")
-    @Enumerated(EnumType.STRING)
-    private Constants category;
+    private String category;
 
-    @Column(name = "address")
-    private Address address;
+    @Column(name = "size")
+    private String size;
 
-    @Column(name = "contact")
-    private Contact contact;
+    @Column(name = "unit_price_sale")
+    private double unitPriceSale;
 
-    @Column(name = "email")
-    private String email;
+    @Column(name = "unit_price_purchase")
+    private double unitPricePurchase;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "suppliersEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = InventoryEntity.class)
-    List<InventoryEntity> inventoryEntities;
+    @Column(name = "qty_on_hand")
+    private int qtyOnHand;
+
+    @Column(name = "expected_profit")
+    private double expectedProfit;
+
+    @Column(name = "profit_margin")
+    private double profitMargin;
+
+    @Column(name = "status")
+    private String status;
+
+    @ManyToOne
+    @JoinColumn(name = "sup_id")
+    private SuppliersEntity suppliersEntity;
+
 
     @CreationTimestamp
     @Column(name = "create_date", updatable = false, nullable = false)
@@ -68,4 +79,5 @@ public class SuppliersEntity {
     @Column(name = "is_active")
     @Enumerated(EnumType.STRING)
     private Constants isActive;
+
 }
