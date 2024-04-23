@@ -50,7 +50,7 @@ public class CustomerEntity {
     @Column(name = "address")
     private Address address;
 
-    @Column(name = "contact")
+    @Column(name = "contact", unique = true)
     private String contact;
 
     @Column(name = "email")
@@ -62,6 +62,12 @@ public class CustomerEntity {
     @ManyToOne
     @JoinColumn(name = "usr_id", nullable = false)
     private UserEntity userEntity;
+
+    @JsonIgnore
+    @OneToMany(mappedBy = "customerEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = SaleEntity.class)
+    List<SaleEntity> saleEntities;
+
+
 
     @CreationTimestamp
     @Column(name = "create_date", updatable = false, nullable = false)

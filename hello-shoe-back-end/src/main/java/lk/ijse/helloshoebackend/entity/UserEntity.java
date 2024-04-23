@@ -47,6 +47,10 @@ public class UserEntity {
     @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = CustomerEntity.class)
     List<CustomerEntity> customerEntities;
 
+    @JsonIgnore
+    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = SaleEntity.class)
+    List<SaleEntity> saleEntities;
+
     @CreationTimestamp
     @Column(name = "create_date", updatable = false, nullable = false)
     @Temporal(TemporalType.TIMESTAMP)
