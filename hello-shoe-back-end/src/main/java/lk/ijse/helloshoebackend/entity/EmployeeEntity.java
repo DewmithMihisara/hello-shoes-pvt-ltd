@@ -4,11 +4,13 @@ import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.entity.embedded.Address;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 
@@ -20,6 +22,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
+@Builder
 @Table(name = "employee")
 @Entity
 public class EmployeeEntity {
@@ -49,13 +52,14 @@ public class EmployeeEntity {
     private Constants accessRole;
 
     @Column(name = "dob")
-    private Date dob;
+    private LocalDate dob;
 
     @Column(name = "date_joined")
-    private Date dateJoined;
+    private LocalDate dateJoined;
 
     @Column(name = "attached_branch")
-    private String attachedBranch;
+    @Enumerated(EnumType.STRING)
+    private Constants attachedBranch;
 
     @Column(name = "address")
     private Address address;
@@ -63,7 +67,7 @@ public class EmployeeEntity {
     @Column(name = "contact")
     private String contact;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
     @Column(name = "info_emergency")
