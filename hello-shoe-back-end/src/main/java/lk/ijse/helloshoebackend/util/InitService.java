@@ -13,23 +13,28 @@ import lk.ijse.helloshoebackend.entity.UserEntity;
  */
 @Service
 public class InitService {
-    @Autowired
-    private UserRepository userRepository;
-
-    @PostConstruct
-    public void init() {
-        if (userRepository.count() == 0) {
-            userRepository.save(
-                    UserEntity.builder()
-                            .id("usr-001")
-                            .password("$2a$12$LO2YSeo9irJxjVGxyPX50uycBslOSfWdMDI8/2Aa0Ff5dbPtMaA5e") //Admin@123
-                            .email("admin@gmail.com")
-                            .role(Role.ROLE_ADMIN)
-                            .createBy("System")
-                            .modifyBy("System")
-                            .isActive(true)
-                            .build()
-            );
-        }
-    }
+//    @Autowired
+//    private UserRepository userRepository;
+//
+//    @PostConstruct
+//    public void init() {
+//        addDefuelEmployee();
+//        if (userRepository.count() == 0) {
+//            userRepository.save(
+//                    UserEntity.builder()
+//                            .id("usr-001")
+//                            .password("$2a$12$LO2YSeo9irJxjVGxyPX50uycBslOSfWdMDI8/2Aa0Ff5dbPtMaA5e") //Admin@123
+//                            .email("admin@gmail.com")
+//                            .role(Constants.ADMIN_USER)
+//                            .createBy("System")
+//                            .modifyBy("System")
+//                            .isActive(Constants.ACTIVE)
+//                            .build()
+//            );
+//        }
+//    }
+//
+//    private void addDefuelEmployee() {
+//
+//    }
 }
