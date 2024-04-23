@@ -10,9 +10,15 @@ public enum Constants {
 
     MAN, WOMAN,
 
+    COLOMBO,
+
     ACTIVE, INACTIVE,
 
-    MARRIAGE, SINGLE,
+    MARRIED, SINGLE,
 
-    INTERNATIONAL, LOCAL
+    INTERNATIONAL, LOCAL,
+
+    EMPLOYEE_ID, USER_ID
+
+
 }
