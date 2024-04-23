@@ -12,5 +12,7 @@ public enum Constants {
 
     ACTIVE, INACTIVE,
 
-    MARRIAGE, SINGLE
+    MARRIAGE, SINGLE,
+
+    INTERNATIONAL, LOCAL
 }
