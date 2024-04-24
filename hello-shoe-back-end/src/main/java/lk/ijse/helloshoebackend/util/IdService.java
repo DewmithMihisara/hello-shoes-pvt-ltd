@@ -14,6 +14,7 @@ public class IdService {
         return switch (constants) {
             case USER_ID -> "USR-" + System.currentTimeMillis();
             case SUPPLIER_ID -> "SUP-" + System.currentTimeMillis();
+            case CUSTOMER_ID -> "CUS-" + System.currentTimeMillis();
             default -> "EMP-" + System.currentTimeMillis();
         };
     }
