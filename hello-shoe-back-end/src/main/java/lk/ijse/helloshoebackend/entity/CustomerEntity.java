@@ -10,6 +10,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
 import java.util.List;
@@ -33,19 +34,21 @@ public class CustomerEntity {
     private String name;
 
     @Column(name = "gender")
+    @Enumerated(EnumType.STRING)
     private Constants gender;
 
     @Column(name = "joined_date")
-    private Date joinedDate;
+    private LocalDate joinedDate;
 
     @Column(name = "level")
-    private String level;
+    @Enumerated(EnumType.STRING)
+    private Constants level;
 
     @Column(name = "ttl_points")
     private Integer ttlPoints;
 
     @Column(name = "dob")
-    private Date dob;
+    private LocalDate dob;
 
     @Column(name = "address")
     private Address address;
@@ -57,7 +60,7 @@ public class CustomerEntity {
     private String email;
 
     @Column(name = "recent_purchases")
-    private String recentPurchases;
+    private LocalDateTime recentPurchases;
 
     @ManyToOne
     @JoinColumn(name = "usr_id", nullable = false)
