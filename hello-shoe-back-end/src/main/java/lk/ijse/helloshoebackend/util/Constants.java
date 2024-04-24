@@ -18,7 +18,7 @@ public enum Constants {
 
     INTERNATIONAL, LOCAL,
 
-    EMPLOYEE_ID, USER_ID
+    EMPLOYEE_ID, USER_ID, SUPPLIER_ID
 
 
 }
