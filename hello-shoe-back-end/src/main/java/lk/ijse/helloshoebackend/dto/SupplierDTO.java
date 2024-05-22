@@ -1,5 +1,9 @@
 package lk.ijse.helloshoebackend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lk.ijse.helloshoebackend.entity.embedded.Address;
+import lk.ijse.helloshoebackend.entity.embedded.Contact;
+import lk.ijse.helloshoebackend.enums.SupplierCategory;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,16 +21,13 @@ import java.io.Serializable;
 @Data
 @Builder
 public class SupplierDTO implements Serializable {
-    private String id;
-    private String name;
-    private String category;
+    private String supplierCode;
+    private String supplierName;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private SupplierCategory supplierCategory;
+    private Contact contact;
     private String email;
-    private String mobileContact;
-    private String landContact;
-    private String line1;
-    private String line2;
-    private String line3;
-    private String line4;
-    private String line5;
-    private String line6;
+    private Boolean isActive;
+    private Address address;
+    private String originCountry;
 }

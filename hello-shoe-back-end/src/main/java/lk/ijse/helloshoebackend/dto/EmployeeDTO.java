@@ -1,11 +1,16 @@
 package lk.ijse.helloshoebackend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lk.ijse.helloshoebackend.entity.embedded.Address;
+import lk.ijse.helloshoebackend.enums.Gender;
+import lk.ijse.helloshoebackend.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Date;
 
 /**
  * @author Dewmith Mihisara
@@ -16,25 +21,23 @@ import java.util.Date;
 @NoArgsConstructor
 @Data
 @Builder
-public class EmployeeDTO {
-    private String id;
-    private String name;
-    private String proPic;
-    private String gender;
-    private String status;
-    private String designation;
-    private String accessRole;
-    private Date dob;
-    private Date dateJoined;
-    private String attachedBranch;
-    private String lane1;
-    private String lane2;
-    private String lane3;
-    private String lane4;
-    private String lane5;
-    private String contact;
-    private String email;
-    private String infoEmergency;
+public class EmployeeDTO implements Serializable {
+    private String empId;
+    private String empName;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Gender gender;
     private String emergencyContact;
-    private String password;
+    private String EmergencyInfo;
+    private String status;
+    private String email;
+    private String contact;
+    private String designation;
+    private Date dob;
+    private Address address;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Role role;
+    private String profilePic;
+    private Boolean isActive;
+    private String branchId;
+    private String branchName;
 }

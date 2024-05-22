@@ -1,5 +1,6 @@
 package lk.ijse.helloshoebackend.dto;
 
+import lk.ijse.helloshoebackend.enums.Role;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
@@ -17,7 +18,7 @@ import java.io.Serializable;
 @NoArgsConstructor
 @Builder
 public class UserDTO implements Serializable {
-    private String id;
-    private String email;
-    private String password;
+    private String userName;
+    private String profilePic;
+    private Role role;
 }

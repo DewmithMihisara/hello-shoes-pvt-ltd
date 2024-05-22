@@ -1,12 +1,17 @@
 package lk.ijse.helloshoebackend.dto;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
+import lk.ijse.helloshoebackend.entity.embedded.Address;
+import lk.ijse.helloshoebackend.enums.Gender;
+import lk.ijse.helloshoebackend.enums.Level;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import java.io.Serializable;
-import java.util.Date;
+import java.sql.Date;
+import java.sql.Timestamp;
 
 /**
  * @author Dewmith Mihisara
@@ -18,20 +23,18 @@ import java.util.Date;
 @Data
 @Builder
 public class CustomerDTO implements Serializable {
-    private String id;
-    private String name;
-    private String email;
+    private String userEmail;
+    private String customerId;
+    private String customerName;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Gender gender;
+    private Integer totalPoints;
     private String contact;
-    private String gender;
-    private Integer level;
-    private Date resetPurchases;
-    private Integer ttlPoints;
+    private String email;
+    private java.sql.Date recentPurchaseDate;
+    private Address address;
+    @JsonFormat(shape = JsonFormat.Shape.STRING)
+    private Level level;
     private Date dob;
-    private Date joinedDate;
-    private String line1;
-    private String line2;
-    private String line3;
-    private String line4;
-    private String line5;
-    private String userId;
+    private Timestamp registeredDate;
 }
