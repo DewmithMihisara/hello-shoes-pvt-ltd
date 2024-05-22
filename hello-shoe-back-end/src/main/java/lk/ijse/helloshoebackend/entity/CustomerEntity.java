@@ -39,7 +39,7 @@ public class CustomerEntity {
     private Date joinedDate;
 
     @Column(name = "level")
-    private String level;
+    private Constants level;
 
     @Column(name = "ttl_points")
     private Integer ttlPoints;

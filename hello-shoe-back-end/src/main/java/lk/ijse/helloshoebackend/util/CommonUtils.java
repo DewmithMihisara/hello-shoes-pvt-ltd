@@ -26,4 +26,8 @@ public class CommonUtils {
     public static Date convertDateToString(LocalDate dob) {
         return java.sql.Date.valueOf(dob);
     }
+
+    public static Date getCurrentDate() {
+        return new Date();
+    }
 }

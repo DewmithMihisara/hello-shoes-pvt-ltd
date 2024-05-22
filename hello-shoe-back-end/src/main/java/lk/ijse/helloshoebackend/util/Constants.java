@@ -6,7 +6,7 @@ package lk.ijse.helloshoebackend.util;
  * @since 0.0.1
  */
 public enum Constants {
-    REGULAR_USER,ADMIN_USER,
+    REGULAR_USER, ADMIN_USER,
 
     MAN, WOMAN,
 
@@ -18,7 +18,7 @@ public enum Constants {
 
     INTERNATIONAL, LOCAL,
 
-    EMPLOYEE_ID, USER_ID, SUPPLIER_ID
+    EMPLOYEE_ID, USER_ID, CUSTOMER_ID, SUPPLIER_ID,
 
-
+    GOLD, SILVER, BRONZE, NEW
 }
