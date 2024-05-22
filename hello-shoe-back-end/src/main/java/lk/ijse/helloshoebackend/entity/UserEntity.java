@@ -2,6 +2,7 @@ package lk.ijse.helloshoebackend.entity;
 
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
+import lk.ijse.helloshoebackend.enums.Role;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -26,48 +27,29 @@ import java.util.List;
 @Table(name = "user")
 public class UserEntity {
     @Id
-    @Column(name = "usr_id")
-    private String id;
-
-    @Column(name = "email")
-    private String email;
+    @Column(name = "username")
+    private String username;
 
     @Column(name = "password")
     private String password;
 
     @Column(name = "role")
     @Enumerated(EnumType.STRING)
-    private Constants role;
+    private Role role;
 
-    @OneToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "emp_id")
-    private EmployeeEntity employeeEntity;
+    @OneToOne
+    @JoinColumn(name = "empId", referencedColumnName = "empId")
+    private EmployeeEntity employee;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = CustomerEntity.class)
-    List<CustomerEntity> customerEntities;
+    @OneToMany(mappedBy = "user")
+    private List<CustomerEntity> customers;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "userEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = SaleEntity.class)
-    List<SaleEntity> saleEntities;
+    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
+    private List<SaleEntity> sales;
 
-    @CreationTimestamp
-    @Column(name = "create_date", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @UpdateTimestamp
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime modifyDate;
-
-    @Column(name = "modify_by")
-    private String modifyBy;
-
-    @Column(name = "is_active")
-    @Enumerated(EnumType.STRING)
-    private Constants isActive;
+    public UserEntity(String email, String password, Role role) {
+        this.username = email;
+        this.password = password;
+        this.role = role;
+    }
 }

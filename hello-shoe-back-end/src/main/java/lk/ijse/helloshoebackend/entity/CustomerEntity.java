@@ -3,6 +3,8 @@ package lk.ijse.helloshoebackend.entity;
 import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.entity.embedded.Address;
+import lk.ijse.helloshoebackend.enums.Gender;
+import lk.ijse.helloshoebackend.enums.Level;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -10,8 +12,9 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Date;
+import java.sql.Timestamp;
 import java.time.LocalDateTime;
-import java.util.Date;
 import java.util.List;
 
 /**
@@ -26,66 +29,46 @@ import java.util.List;
 @Entity
 public class CustomerEntity {
     @Id
-    @Column(name = "cus_id")
-    private String id;
+    @Column(name = "customer_id")
+    private String customerId;
 
-    @Column(name = "cus_name")
-    private String name;
+    @Column(name = "customer_name")
+    private String customerName;
 
     @Column(name = "gender")
-    private Constants gender;
+    @Enumerated(EnumType.STRING)
+    private Gender gender;
 
-    @Column(name = "joined_date")
-    private Date joinedDate;
+    @Column(name = "registered_date")
+    @CreationTimestamp
+    private Timestamp registeredDate;
 
-    @Column(name = "level")
-    private Constants level;
-
-    @Column(name = "ttl_points")
-    private Integer ttlPoints;
-
-    @Column(name = "dob")
-    private Date dob;
-
-    @Column(name = "address")
-    private Address address;
+    @Column(name = "total_points")
+    private Integer totalPoints;
 
     @Column(name = "contact", unique = true)
     private String contact;
 
-    @Column(name = "email")
+    @Column(name = "email", unique = true)
     private String email;
 
-    @Column(name = "recent_purchases")
-    private String recentPurchases;
+    @Column(name = "recent_purchase_date")
+    private java.sql.Date recentPurchaseDate;
 
-    @ManyToOne
-    @JoinColumn(name = "usr_id", nullable = false)
-    private UserEntity userEntity;
+    @Embedded
+    @Column(name = "address")
+    private Address address;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "customerEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = SaleEntity.class)
-    List<SaleEntity> saleEntities;
-
-
-
-    @CreationTimestamp
-    @Column(name = "create_date", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @UpdateTimestamp
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime modifyDate;
-
-    @Column(name = "modify_by")
-    private String modifyBy;
-
-    @Column(name = "is_active")
+    @Column(name = "level")
     @Enumerated(EnumType.STRING)
-    private Constants isActive;
+    private Level level;
+
+    @Column(name = "dob")
+    private Date dob;
+
+    @ManyToOne(fetch = FetchType.LAZY)
+    private UserEntity user;
+
+    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<SaleEntity> sales;
 }

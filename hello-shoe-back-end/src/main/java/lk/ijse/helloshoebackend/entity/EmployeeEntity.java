@@ -2,6 +2,8 @@ package lk.ijse.helloshoebackend.entity;
 
 import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.entity.embedded.Address;
+import lk.ijse.helloshoebackend.enums.Gender;
+import lk.ijse.helloshoebackend.enums.Role;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -10,6 +12,7 @@ import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
+import java.sql.Timestamp;
 import java.time.LocalDate;
 import java.time.LocalDateTime;
 import java.util.Date;
@@ -27,78 +30,55 @@ import java.util.Date;
 @Entity
 public class EmployeeEntity {
     @Id
-    @Column(name = "emp_id")
-    private String id;
+    private String empId; // 299e671f  // 8aeffaa6
 
     @Column(name = "emp_name")
-    private String name;
-
-    @Column(name = "pro-pic")
-    private String proPic;
+    private String empName;
 
     @Column(name = "gender")
     @Enumerated(EnumType.STRING)
-    private Constants gender;
-
-    @Column(name = "status")
-    @Enumerated(EnumType.STRING)
-    private Constants status;
-
-    @Column(name = "designation")
-    private String designation;
-
-    @Column(name = "access_role")
-    @Enumerated(EnumType.STRING)
-    private Constants accessRole;
-
-    @Column(name = "dob")
-    private LocalDate dob;
-
-    @Column(name = "date_joined")
-    private LocalDate dateJoined;
-
-    @Column(name = "attached_branch")
-    @Enumerated(EnumType.STRING)
-    private Constants attachedBranch;
-
-    @Column(name = "address")
-    private Address address;
-
-    @Column(name = "contact")
-    private String contact;
-
-    @Column(name = "email", unique = true)
-    private String email;
-
-    @Column(name = "info_emergency")
-    private String infoEmergency;
+    private Gender gender;
 
     @Column(name = "emergency_contact")
     private String emergencyContact;
 
-    @OneToOne(mappedBy = "employeeEntity", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
-    private UserEntity user;
+    @Column(name = "emergency_info")
+    private String EmergencyInfo;
 
+    @Column(name = "role")
+    @Enumerated(EnumType.STRING)
+    private Role role;
 
+    @Column(name = "profile_pic")
+    private String profilePic;
 
-    @CreationTimestamp
-    @Column(name = "create_date", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
+    @Column(name = "status")
+    private String status;
 
-    @Column(name = "create_by")
-    private String createBy;
+    @Column(name = "email", unique = true)
+    private String email;
 
-    @UpdateTimestamp
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime modifyDate;
-
-    @Column(name = "modify_by")
-    private String modifyBy;
+    @Column(name = "contact")
+    private String contact;
 
     @Column(name = "is_active")
-    @Enumerated(EnumType.STRING)
-    private Constants isActive;
+    private Boolean isActive;
 
+    @Column(name = "designation")
+    private String designation;
+
+    @Column(name = "dob")
+    private Date dob;
+
+    @Embedded
+    @Column(name = "address")
+    private Address address;
+
+    @CreationTimestamp
+    @Column(name = "reg_date")
+    private Timestamp regDate;
+
+    @ManyToOne
+    @JoinColumn(name = "branch_Id", referencedColumnName = "branch_id")
+    private BranchEntity branch;
 }

@@ -1,6 +1,9 @@
 package lk.ijse.helloshoebackend.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.helloshoebackend.enums.ItemGender;
+import lk.ijse.helloshoebackend.enums.ItemStatus;
+import lk.ijse.helloshoebackend.enums.ItemType;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -9,6 +12,7 @@ import org.hibernate.annotations.CreationTimestamp;
 import org.hibernate.annotations.UpdateTimestamp;
 
 import java.time.LocalDateTime;
+import java.util.List;
 
 /**
  * @author Dewmith Mihisara
@@ -22,62 +26,63 @@ import java.time.LocalDateTime;
 @Entity
 public class InventoryEntity {
     @Id
-    @Column(name = "itm_id")
-    private String id;
+    @Column(name = "item_code")
+    private String itemCode;
 
-    @Column(name = "itm_desc")
-    private String description;
+    @Column(name = "item_description")
+    private String itemDescription;
 
-    @Column(name = "itm_pic")
-    private String picture;
-
-    @Column(name = "category")
-    private String category;
-
-    @Column(name = "size")
-    private String size;
-
-    @Column(name = "unit_price_sale")
-    private double unitPriceSale;
-
-    @Column(name = "unit_price_purchase")
-    private double unitPricePurchase;
+    @Column(name = "item_picture")
+    private String itemPicture;
 
     @Column(name = "qty_on_hand")
-    private int qtyOnHand;
+    private Integer qtyOnHand;
+
+    @Column(name = "size")
+    private Integer size;
+
+    @Column(name = "discount")
+    private Integer discount;
+
+    @Column(name = "item_type")
+    @Enumerated(EnumType.STRING)
+    private ItemType itemType;
+
+    @Column(name = "item_gender")
+    @Enumerated(EnumType.STRING)
+    private ItemGender itemGender;
+
+    @Column(name = "buying_price")
+    private Double buyingPrice;
+
+    @Column(name = "brand")
+    private String brand;
+
+    @Column(name = "selling_price")
+    private Double sellingPrice;
 
     @Column(name = "expected_profit")
-    private double expectedProfit;
+    private Double expectedProfit;
 
     @Column(name = "profit_margin")
-    private double profitMargin;
+    private Double profitMargin;
 
-    @Column(name = "status")
-    private String status;
-
-    @ManyToOne
-    @JoinColumn(name = "sup_id")
-    private SuppliersEntity suppliersEntity;
-
-
-    @CreationTimestamp
-    @Column(name = "create_date", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @UpdateTimestamp
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime modifyDate;
-
-    @Column(name = "modify_by")
-    private String modifyBy;
-
-    @Column(name = "is_active")
+    @Column(name = "item_status")
     @Enumerated(EnumType.STRING)
-    private Constants isActive;
+    private ItemStatus itemStatus;
 
+    @Column(name = "supplier_name")
+    private String supplierName;
+
+    @Column(name = "item_sold_count")
+    private Integer itemSoldCount;
+
+    @Column(name = "get_stock_total")
+    private Integer getStockTotal;
+
+    @ManyToOne(cascade = CascadeType.ALL)
+    private SuppliersEntity supplier;
+
+    @ManyToMany(mappedBy = "inventories")
+    private List<SaleEntity> sales;
 }

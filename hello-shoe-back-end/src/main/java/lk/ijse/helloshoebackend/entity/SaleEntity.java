@@ -1,9 +1,14 @@
 package lk.ijse.helloshoebackend.entity;
 
 import jakarta.persistence.*;
+import lk.ijse.helloshoebackend.enums.PaymentMethod;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
+import org.hibernate.annotations.CreationTimestamp;
+
+import java.sql.Timestamp;
+import java.util.List;
 
 /**
  * @author Dewmith Mihisara
@@ -18,35 +23,50 @@ import lombok.NoArgsConstructor;
 public class SaleEntity {
     @Id
     @Column(name = "sale_id")
-    private String id;
+    private String saleId;
 
-    @Column(name = "itm_qty")
-    private Integer itmQty;
+    //    private String itemDescription;
 
-    @Column(name = "ttl_price")
-    private Double ttlPrice;
+    @Column(name = "getqty")
+    private Integer getqty;
 
-    @Column(name = "cus_name")
-    private String cusName;
+//    private Integer size;
 
-    @Column(name = "cashier")
-    private String cashier;
+//    private Double unitPrice;
+
+    @Column(name = "sub_total")
+    private Double subTotal;
+
+    @Column(name = "customer_name")
+    private String customerName;
+
+    @Column(name = "cashier_name")
+    private String cashierName;
 
     @Column(name = "added_points")
     private Integer addedPoints;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "payment_method")
-    private String paymentMethod;
+    private PaymentMethod paymentMethod;
 
-    @Column(name = "perchased_date")
-    private String perchasedDate;
+    @CreationTimestamp
+    @Column(name = "purchase_date")
+    private Timestamp purchaseDate;
 
-    @ManyToOne
-    @JoinColumn(name = "usr_id", nullable = false)
-    private UserEntity userEntity;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "customer_id", referencedColumnName = "customer_id")
+    private CustomerEntity customer;
 
-    @ManyToOne
-    @JoinColumn(name = "cus_id")
-    private CustomerEntity customerEntity;
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "username", referencedColumnName = "username")
+    private UserEntity user;
 
+    @ManyToMany
+    @JoinTable(
+            name = "sale_inventory",
+            joinColumns = @JoinColumn(name = "sale_id"),
+            inverseJoinColumns = @JoinColumn(name = "inventory_id")
+    )
+    private List<InventoryEntity> inventories;
 }

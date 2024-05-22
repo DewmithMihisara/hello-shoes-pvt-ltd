@@ -4,6 +4,7 @@ import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.entity.embedded.Address;
 import lk.ijse.helloshoebackend.entity.embedded.Contact;
+import lk.ijse.helloshoebackend.enums.SupplierCategory;
 import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
@@ -26,46 +27,33 @@ import java.util.List;
 @Table(name = "suppliers")
 public class SuppliersEntity {
     @Id
-    @Column(name = "sup_id")
-    private String id;
+    @Column(name = "supplier_code")
+    private String supplierCode;
 
-    @Column(name = "sup_name")
-    private String name;
+    @Column(name = "supplier_name")
+    private String supplierName;
 
-    @Column(name = "category")
+    @Column(name = "supplier_category")
     @Enumerated(EnumType.STRING)
-    private Constants category;
+    private SupplierCategory supplierCategory;
 
-    @Column(name = "address")
-    private Address address;
-
+    @Embedded
     @Column(name = "contact")
     private Contact contact;
 
     @Column(name = "email")
     private String email;
 
-    @JsonIgnore
-    @OneToMany(mappedBy = "suppliersEntity", fetch = FetchType.LAZY, cascade = CascadeType.ALL, targetEntity = InventoryEntity.class)
-    List<InventoryEntity> inventoryEntities;
-
-    @CreationTimestamp
-    @Column(name = "create_date", updatable = false, nullable = false)
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime createDate;
-
-    @Column(name = "create_by")
-    private String createBy;
-
-    @UpdateTimestamp
-    @Column(name = "modify_date")
-    @Temporal(TemporalType.TIMESTAMP)
-    private LocalDateTime modifyDate;
-
-    @Column(name = "modify_by")
-    private String modifyBy;
-
     @Column(name = "is_active")
-    @Enumerated(EnumType.STRING)
-    private Constants isActive;
+    private Boolean isActive;
+
+    @Embedded
+    @Column(name = "address")
+    private Address address;
+
+    @Column(name = "origin_country")
+    private String originCountry;
+
+    @OneToMany(mappedBy = "supplier", cascade = CascadeType.ALL)
+    private List<InventoryEntity> inventories;
 }
