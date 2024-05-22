@@ -3,6 +3,7 @@ package lk.ijse.helloshoebackend.repository;
 import lk.ijse.helloshoebackend.entity.EmployeeEntity;
 import lk.ijse.helloshoebackend.entity.UserEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
+import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
 
@@ -11,8 +12,7 @@ import java.util.Optional;
  * @date 2024-04-22
  * @since 0.0.1
  */
+@Repository
 public interface UserRepository extends JpaRepository<UserEntity, String> {
-    Optional<UserEntity> findByEmail(String email);
-
-    UserEntity findByEmployeeEntity(EmployeeEntity employeeEntity);
+    Optional<UserEntity> findByUsername(String name);
 }

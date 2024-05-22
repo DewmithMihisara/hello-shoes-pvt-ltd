@@ -1,8 +1,11 @@
 package lk.ijse.helloshoebackend.repository;
 
 import lk.ijse.helloshoebackend.entity.EmployeeEntity;
+import lk.ijse.helloshoebackend.enums.Role;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
+
+import java.util.List;
 
 /**
  * @author Dewmith Mihisara
@@ -11,5 +14,5 @@ import org.springframework.stereotype.Repository;
  */
 @Repository
 public interface EmployeeRepository extends JpaRepository<EmployeeEntity, String> {
-    Boolean existsByEmailAndContact(String email, String contact);
+    List<EmployeeEntity> findAllByRole(Role role);
 }
