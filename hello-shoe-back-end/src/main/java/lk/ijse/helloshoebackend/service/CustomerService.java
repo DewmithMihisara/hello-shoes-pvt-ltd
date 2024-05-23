@@ -7,16 +7,22 @@ import java.util.List;
 
 /**
  * @author Dewmith Mihisara
- * @date 2024-04-27
+ * @date 2024-04-24
  * @since 0.0.1
  */
 @Service
 public interface CustomerService {
-    Boolean existsByEmailAndContact(String email, String contact);
-    Integer saveCustomer(CustomerDTO customerDTO);
-    Integer updateCustomer(CustomerDTO customerDTO);
-    Integer disableCustomer(String id);
-    Integer enableCustomer(String id);
-    CustomerDTO searchCustomer(String id);
+    boolean saveCustomer(CustomerDTO customerDTO);
+
     List<CustomerDTO> getAllCustomers();
+
+    boolean updateCustomer(CustomerDTO customerDTO);
+
+    CustomerDTO getCustomer(String id);
+
+    String deleteCustomer(String id);
+
+    List<String> getContactList();
+
+    CustomerDTO getCustomerByContact(String id);
 }
