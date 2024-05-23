@@ -4,42 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="61813df4-4c4d-47b2-8aaa-b0cfd1bb90ea" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/BranchEntity.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/Gender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/ItemGender.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/ItemStatus.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/ItemType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/Level.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/PaymentMethod.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/Role.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/enums/SupplierCategory.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+    <list default="true" id="61813df4-4c4d-47b2-8aaa-b0cfd1bb90ea" name="Changes" comment="test">
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/AuthController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/BranchController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/CustomerController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/EmployeeController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/InventoryController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/SaleController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/api/SupplierController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/InitService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/upload.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/controller/AuthController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/controller/EmployeeController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/controller/SupplierController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/controller/UserController.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/CustomerEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/CustomerEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/EmployeeEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/EmployeeEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/InventoryEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/InventoryEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SaleEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SaleEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SaleInventoryDetails.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SaleInventoryDetails.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SuppliersEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/SuppliersEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/UserEntity.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/entity/UserEntity.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/repository/UserRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/repository/UserRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/security/UserDetailsServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/security/UserDetailsServiceImpl.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/CustomerService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/EmployeeService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/Impl/CustomerServiceIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/Impl/EmployeeServiceIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/Impl/SupplierServiceIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/Impl/UserServiceIMPL.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/SupplierService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/UserService.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/util/InitService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/util/InitService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/config/ApplicationConfigurations.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/config/ApplicationConfigurations.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -49,6 +25,8 @@
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
+        <option value="Interface" />
+        <option value="Enum" />
         <option value="Class" />
       </list>
     </option>
@@ -84,10 +62,10 @@
     "RequestMappingsPanelWidth1": "75",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "Spring Boot.HelloShoeBackEndApplication.executor": "Run",
+    "Spring Boot.HelloShoeBackEndApplication.executor": "Debug",
     "git-widget-placeholder": "main",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/dewmithmihisara/ijse/aad-final/hello-shoes-pvt-ltd/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend",
+    "last_opened_file_path": "/Users/dewmithmihisara/ijse/aad-final/hello-shoes-pvt-ltd/hello-shoe-back-end",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -104,6 +82,7 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/hello-shoe-back-end" />
       <recent name="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend" />
     </key>
   </component>
@@ -133,11 +112,69 @@
       <option name="presentableId" value="Default" />
       <updated>1714181827725</updated>
       <workItem from="1714181829263" duration="54000" />
-      <workItem from="1716368913204" duration="3177000" />
+      <workItem from="1716368913204" duration="16157000" />
     </task>
+    <task id="LOCAL-00001" summary="customize entities">
+      <option name="closed" value="true" />
+      <created>1716378913696</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1716378913696</updated>
+    </task>
+    <task id="LOCAL-00002" summary="separate enums">
+      <option name="closed" value="true" />
+      <created>1716378941714</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1716378941714</updated>
+    </task>
+    <task id="LOCAL-00003" summary="modify repository layer">
+      <option name="closed" value="true" />
+      <created>1716379344335</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1716379344335</updated>
+    </task>
+    <task id="LOCAL-00004" summary="modify dto">
+      <option name="closed" value="true" />
+      <created>1716381850456</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1716381850456</updated>
+    </task>
+    <task id="LOCAL-00005" summary="service leer bug fixed">
+      <option name="closed" value="true" />
+      <created>1716447429141</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1716447429141</updated>
+    </task>
+    <task id="LOCAL-00006" summary="test">
+      <option name="closed" value="true" />
+      <created>1716447443820</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1716447443820</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="customize entities" />
+    <MESSAGE value="separate enums" />
+    <MESSAGE value="modify repository layer" />
+    <MESSAGE value="modify dto" />
+    <MESSAGE value="service leer bug fixed" />
+    <MESSAGE value="test" />
+    <option name="LAST_COMMIT_MESSAGE" value="test" />
   </component>
 </project>
