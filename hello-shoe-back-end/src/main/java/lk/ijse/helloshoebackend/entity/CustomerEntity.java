@@ -1,20 +1,16 @@
 package lk.ijse.helloshoebackend.entity;
 
-import com.fasterxml.jackson.annotation.JsonIgnore;
 import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.entity.embedded.Address;
 import lk.ijse.helloshoebackend.enums.Gender;
 import lk.ijse.helloshoebackend.enums.Level;
-import lk.ijse.helloshoebackend.util.Constants;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.hibernate.annotations.CreationTimestamp;
-import org.hibernate.annotations.UpdateTimestamp;
 
 import java.sql.Date;
 import java.sql.Timestamp;
-import java.time.LocalDateTime;
 import java.util.List;
 
 /**
