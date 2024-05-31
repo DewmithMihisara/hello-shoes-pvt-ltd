@@ -31,7 +31,7 @@ public class InitService {
         if (userRepository.count() == 0) {
             userRepository.save(UserEntity
                     .builder()
-                    .username("admin@gmai.com")
+                    .username("admin@gmail.com")
                     .password("$2a$12$GjVlMV9LqXNo5.Hq.SuBBuMj7Td7zDEz4x8lTqJRScviDtU/7bRR2") // Admin@123
                     .role(Role.SUPER_ADMIN)
                     .build());

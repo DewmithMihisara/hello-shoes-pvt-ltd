@@ -42,8 +42,10 @@ public class ApplicationConfigurations {
 
     private static String getPathToGoodleCredentials() {
         String currentDirectory = System.getProperty("user.dir");
-        Path filePath = Paths.get(currentDirectory, "hello-shoe-back-end/upload.json");
+        System.out.println(currentDirectory);
+        Path filePath = Paths.get(currentDirectory, "/hello-shoe-back-end/upload.json");
         System.out.println("FILE PATH: " + filePath.toString());
+
         return filePath.toString();
     }
 }

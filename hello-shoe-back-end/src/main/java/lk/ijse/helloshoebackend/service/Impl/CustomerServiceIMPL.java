@@ -15,10 +15,10 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * @author : savindaJ
- * @date : 4/28/2024
- * @since : 0.1.0
- **/
+ * @author Dewmith Mihisara
+ * @date 2024-04-24
+ * @since 0.0.1
+ */
 @Service
 public class CustomerServiceImpl implements CustomerService {
 
