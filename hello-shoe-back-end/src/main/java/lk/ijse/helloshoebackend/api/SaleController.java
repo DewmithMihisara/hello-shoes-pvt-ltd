@@ -23,13 +23,13 @@ public class SaleController {
     @PostMapping
     public ResponseEntity<?> saveSale(@RequestBody SaleDTO saleDTO){
         boolean isPlaced = saleService.saveSale(saleDTO);
-        return isPlaced ? ResponseEntity.ok("Sale Placed") : ResponseEntity.badRequest().body("Sale Not Placed");
+        return isPlaced ? ResponseEntity.ok("SaleEntity Placed") : ResponseEntity.badRequest().body("SaleEntity Not Placed");
     }
 
     @PostMapping("/update")
     public ResponseEntity<?> updateSale(@RequestBody SaleInventoryCollectionDTO saleInventoryCollectionDTO){
         boolean isPlaced = saleService.updateSale(saleInventoryCollectionDTO);
-        return isPlaced ? ResponseEntity.ok("Sale Updated") : ResponseEntity.badRequest().body("Sale Not Updated");
+        return isPlaced ? ResponseEntity.ok("SaleEntity Updated") : ResponseEntity.badRequest().body("SaleEntity Not Updated");
     }
 
     @GetMapping

@@ -24,7 +24,7 @@ public class BranchController {
     @PostMapping
     public ResponseEntity<?> saveBranch(@RequestBody BranchDTO branchDTO) {
         boolean isSaved = branchService.saveBranch(branchDTO);
-        return isSaved ? ResponseEntity.ok("Branch Saved !") : ResponseEntity.badRequest().body("Failed to save the branch");
+        return isSaved ? ResponseEntity.ok("BranchEntity Saved !") : ResponseEntity.badRequest().body("Failed to save the branch");
     }
 
     @GetMapping
@@ -35,13 +35,13 @@ public class BranchController {
     @PutMapping
     public ResponseEntity<?> updateBranch(@RequestBody BranchDTO branchDTO) {
         boolean isUpdated = branchService.updateBranch(branchDTO);
-        return isUpdated ? ResponseEntity.ok("Branch Updated !") : ResponseEntity.badRequest().body("Failed to update the branch");
+        return isUpdated ? ResponseEntity.ok("BranchEntity Updated !") : ResponseEntity.badRequest().body("Failed to update the branch");
     }
 
     @DeleteMapping("/{branchId}")
     public ResponseEntity<?> deleteBranch(@PathVariable("branchId") String branchId) {
         boolean isDeleted = branchService.deleteBranch(branchId);
-        return isDeleted ? ResponseEntity.ok("Branch Deleted !") : ResponseEntity.badRequest().body("Failed to delete the branch");
+        return isDeleted ? ResponseEntity.ok("BranchEntity Deleted !") : ResponseEntity.badRequest().body("Failed to delete the branch");
     }
     @GetMapping("/get/id")
     public ResponseEntity<?> getBranchId() {

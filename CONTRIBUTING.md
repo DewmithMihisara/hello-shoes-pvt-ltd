@@ -22,11 +22,11 @@ If you have an idea for a new feature or enhancement to the Hello Shoes Pvt. Ltd
 
 If you'd like to contribute code to the project, follow these steps:
 1. Fork the repository to your GitHub account.
-2. Create a new branch for your feature or bug fix: `git checkout -b feature-name`.
+2. Create a new branchEntity for your feature or bug fix: `git checkout -b feature-name`.
 3. Make your changes and ensure they adhere to the project's coding standards.
 4. Test your changes locally to verify they work as expected.
 5. Commit your changes and push them to your fork: `git push origin feature-name`.
-6. Submit a pull request from your fork to the main repository's `main` branch.
+6. Submit a pull request from your fork to the main repository's `main` branchEntity.
 
 ## Code Style Guidelines
 

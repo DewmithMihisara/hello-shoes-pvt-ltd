@@ -10,11 +10,6 @@ import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-05-22
- * @since 0.0.1
- */
 @Repository
 public interface InventoryRepository extends JpaRepository<InventoryEntity, String> {
     List<InventoryEntity> findAllByItemStatusNot(ItemStatus itemStatus);

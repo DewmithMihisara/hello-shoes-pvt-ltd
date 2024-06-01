@@ -29,7 +29,7 @@ public class InventoryController {
     public ResponseEntity<?> saveInventory(@RequestParam("item") String inventory, @RequestParam("itemImage") MultipartFile file) throws IOException {
         InventoryDTO inventoryDTO = new ObjectMapper().readValue(inventory, InventoryDTO.class);
         boolean isSave = inventoryService.saveInventory(inventoryDTO, file);
-        return isSave ? ResponseEntity.ok("Inventory Saved !") : ResponseEntity.badRequest().body("Failed to save the inventory");
+        return isSave ? ResponseEntity.ok("InventoryEntity Saved !") : ResponseEntity.badRequest().body("Failed to save the inventory");
     }
 
     @GetMapping("/available")
@@ -51,7 +51,7 @@ public class InventoryController {
     public ResponseEntity<?> updateInventory(@RequestParam("item") String inventory, @RequestParam("itemImage") MultipartFile file) throws IOException {
         InventoryDTO inventoryDTO = new ObjectMapper().readValue(inventory, InventoryDTO.class);
         boolean isSave = inventoryService.updateInventory(inventoryDTO, file);
-        return isSave ? ResponseEntity.ok("Inventory Updated !") : ResponseEntity.badRequest().body("Failed to update the inventory");
+        return isSave ? ResponseEntity.ok("InventoryEntity Updated !") : ResponseEntity.badRequest().body("Failed to update the inventory");
     }
 
     @GetMapping("/get/brands")

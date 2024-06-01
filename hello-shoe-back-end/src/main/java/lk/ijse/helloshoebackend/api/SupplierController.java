@@ -24,7 +24,7 @@ public class SupplierController {
     @PostMapping
     public ResponseEntity<?> saveSupplier(@RequestBody SupplierDTO supplierDTO){
         boolean isSave = supplierService.saveSupplier(supplierDTO);
-        return isSave ? ResponseEntity.ok("Supplier Saved !") : ResponseEntity.badRequest().body("Failed to save the supplier");
+        return isSave ? ResponseEntity.ok("SupplierEntity Saved !") : ResponseEntity.badRequest().body("Failed to save the supplier");
     }
 
     @GetMapping
@@ -40,13 +40,13 @@ public class SupplierController {
     @PutMapping
     public ResponseEntity<?> updateSupplier(@RequestBody SupplierDTO supplierDTO){
         boolean isUpdate = supplierService.updateSupplier(supplierDTO);
-        return isUpdate ? ResponseEntity.ok("Supplier Updated !") : ResponseEntity.badRequest().body("Failed to update the supplier");
+        return isUpdate ? ResponseEntity.ok("SupplierEntity Updated !") : ResponseEntity.badRequest().body("Failed to update the supplier");
     }
 
     @DeleteMapping("/delete/{id}")
     public ResponseEntity<?> deleteSupplier(@PathVariable("id") String id){
         boolean isDelete = supplierService.deleteSupplier(id);
-        return isDelete ? ResponseEntity.ok("Supplier Deleted !") : ResponseEntity.badRequest().body("Failed to delete the supplier");
+        return isDelete ? ResponseEntity.ok("SupplierEntity Deleted !") : ResponseEntity.badRequest().body("Failed to delete the supplier");
     }
 
     @GetMapping("/get/id")

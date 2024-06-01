@@ -27,7 +27,7 @@ public class CustomerController {
     @PostMapping
     public ResponseEntity<?> saveCustomer(@RequestBody CustomerDTO customerDTO) throws URISyntaxException {
         boolean isSave = customerService.saveCustomer(customerDTO);
-        return isSave ? ResponseEntity.created(new URI("/customers")).body("Customer Saved !") : ResponseEntity.badRequest().body("Customer Save Failed !");
+        return isSave ? ResponseEntity.created(new URI("/customers")).body("CustomerEntity Saved !") : ResponseEntity.badRequest().body("CustomerEntity Save Failed !");
     }
 
     @GetMapping
@@ -38,7 +38,7 @@ public class CustomerController {
     @PutMapping
     public ResponseEntity<?> updateCustomer(@RequestBody CustomerDTO customerDTO){
         boolean isUpdate = customerService.updateCustomer(customerDTO);
-        return isUpdate ? ResponseEntity.ok("Customer Updated !") : ResponseEntity.badRequest().body("Customer Update Failed !");
+        return isUpdate ? ResponseEntity.ok("CustomerEntity Updated !") : ResponseEntity.badRequest().body("CustomerEntity Update Failed !");
     }
 
     @GetMapping("/{id}")

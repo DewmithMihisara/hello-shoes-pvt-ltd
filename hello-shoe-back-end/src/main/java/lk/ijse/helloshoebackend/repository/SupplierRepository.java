@@ -1,18 +1,12 @@
 package lk.ijse.helloshoebackend.repository;
 
-import lk.ijse.helloshoebackend.entity.SuppliersEntity;
-import lk.ijse.helloshoebackend.entity.embedded.Contact;
+import lk.ijse.helloshoebackend.entity.SupplierEntity;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-24
- * @since 0.0.1
- */
 @Repository
-public interface SupplierRepository extends JpaRepository<SuppliersEntity, String> {
-    List<SuppliersEntity> findAllByIsActive(boolean isActive);
+public interface SupplierRepository extends JpaRepository<SupplierEntity, String> {
+    List<SupplierEntity> findAllByIsActive(boolean isActive);
 }

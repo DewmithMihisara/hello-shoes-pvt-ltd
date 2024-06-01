@@ -29,7 +29,7 @@ public class EmployeeController {
     public ResponseEntity<?> saveEmployee(@RequestParam String employee, @RequestParam("image") MultipartFile file) throws IOException {
         System.out.println(employee);
         boolean isSave = employeeService.saveEmployee(new ObjectMapper().readValue(employee, EmployeeDTO.class),file);
-        return isSave ? ResponseEntity.ok("Employee Saved !") : ResponseEntity.badRequest().body("Failed to save the employee");
+        return isSave ? ResponseEntity.ok("EmployeeEntity Saved !") : ResponseEntity.badRequest().body("Failed to save the employee");
     }
 
     @GetMapping("/admin")
@@ -50,6 +50,6 @@ public class EmployeeController {
     @PutMapping
     public ResponseEntity<?> updateEmployee(@RequestParam("employee") String employee,@RequestParam("image") MultipartFile file) throws IOException {
         boolean isUpdate = employeeService.updateEmployee(new ObjectMapper().readValue(employee, EmployeeDTO.class),file);
-        return isUpdate ? ResponseEntity.ok("Employee Updated !") : ResponseEntity.badRequest().body("Failed to update the employee");
+        return isUpdate ? ResponseEntity.ok("EmployeeEntity Updated !") : ResponseEntity.badRequest().body("Failed to update the employee");
     }
 }

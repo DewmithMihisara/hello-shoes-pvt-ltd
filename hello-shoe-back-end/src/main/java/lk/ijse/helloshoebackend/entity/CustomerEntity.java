@@ -13,58 +13,33 @@ import java.sql.Date;
 import java.sql.Timestamp;
 import java.util.List;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-23
- * @since 0.0.1
- */
+
+@Entity
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "customer")
-@Entity
 public class CustomerEntity {
     @Id
-    @Column(name = "customer_id")
     private String customerId;
-
-    @Column(name = "customer_name")
     private String customerName;
-
-    @Column(name = "gender")
     @Enumerated(EnumType.STRING)
     private Gender gender;
-
-    @Column(name = "registered_date")
     @CreationTimestamp
     private Timestamp registeredDate;
-
-    @Column(name = "total_points")
     private Integer totalPoints;
-
-    @Column(name = "contact", unique = true)
+    @Column(unique = true)
     private String contact;
-
-    @Column(name = "email", unique = true)
     private String email;
-
-    @Column(name = "recent_purchase_date")
-    private java.sql.Date recentPurchaseDate;
-
-    @Embedded
-    @Column(name = "address")
+    private Date recentPurchaseDate;
     private Address address;
-
-    @Column(name = "level")
     @Enumerated(EnumType.STRING)
     private Level level;
-
-    @Column(name = "dob")
     private Date dob;
 
     @ManyToOne(fetch = FetchType.LAZY)
-    private UserEntity user;
+    private UserEntity userEntity;
 
-    @OneToMany(mappedBy = "customer", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
-    private List<SaleEntity> sales;
+    @OneToMany(mappedBy = "customerEntity", cascade = CascadeType.ALL,fetch = FetchType.LAZY)
+    private List<SaleEntity> saleEntities;
 }

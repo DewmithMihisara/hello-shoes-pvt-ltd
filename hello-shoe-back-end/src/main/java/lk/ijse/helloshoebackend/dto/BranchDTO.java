@@ -5,18 +5,12 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.sql.Timestamp;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-24
- * @since 0.0.1
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class BranchDTO implements Serializable {
+public class BranchDTO {
     private String branchId;
     private String branchName;
     private String branchContact;

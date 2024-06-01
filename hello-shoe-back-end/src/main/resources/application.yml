@@ -2,7 +2,7 @@ spring:
   application:
     name: spring-boot-with-jwt-auth
   datasource:
-    url: jdbc:mysql://localhost:3306/hello_shoe?createDatabaseIfNotExist=true
+    url: jdbc:mysql://localhost:3306/abcd?createDatabaseIfNotExist=true
     username: root
     password: Dew@2005
     driver-class-name: com.mysql.cj.jdbc.Driver
@@ -14,10 +14,27 @@ spring:
         dialect: org.hibernate.dialect.MySQLDialect
     show-sql: true
     hibernate:
-      ddl-auto: create
+      ddl-auto: update
+
+  mail:
+    host: smtp.gmail.com
+    port: 587
+    username: theekshanaroxx0525@gmail.com
+    password: cofc gdaq ywaz qejm
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+
+  servlet:
+    multipart:
+      max-file-size: 10MB
+      max-request-size: 10MB
 
 server:
-  port: 8085
+  port: 8000
   servlet:
     context-path: /hello_shoe
 

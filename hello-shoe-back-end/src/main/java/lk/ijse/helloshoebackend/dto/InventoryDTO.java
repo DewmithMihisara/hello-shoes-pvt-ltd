@@ -8,17 +8,10 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
-
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-24
- * @since 0.0.1
- */
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-public class InventoryDTO implements Serializable {
+public class InventoryDTO {
     private String itemCode;
     private String supplierId;
     private String itemDescription;

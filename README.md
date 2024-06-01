@@ -2,12 +2,12 @@
 
 ![Java](https://img.shields.io/badge/Java-21-orange) ![GitHub](https://img.shields.io/github/license/DewmithMihisara/hello-shoes-pvt-ltd)
 
-Welcome to the Hello Shoes Pvt. Ltd repository! This project aims to develop an enterprise-level shoe shop management system using Spring Framework, specializing in Spring Boot and MySQL. The system provides comprehensive functionalities for managing sales, suppliers, customers, employees, inventory, and an admin panel for summarizing sales data.
+Welcome to the Hello Shoes Pvt. Ltd repository! This project aims to develop an enterprise-level shoe shop management system using Spring Framework, specializing in Spring Boot and MySQL. The system provides comprehensive functionalities for managing sales, supplierEntities, customers, employees, inventoryEntity, and an admin panel for summarizing sales data.
 
 ## Objectives
 The primary objectives of this project are to:
-- Streamline business processes and replace legacy practices with modern solutions to improve operational efficiency and customer service.
-- Provide a user-friendly interface for both employees and customers, enhancing the overall user experience.
+- Streamline business processes and replace legacy practices with modern solutions to improve operational efficiency and customerEntity service.
+- Provide a userEntity-friendly interface for both employees and customers, enhancing the overall userEntity experience.
 - Implement robust security measures to protect sensitive data and ensure compliance with privacy regulations.
 - Utilize industry best practices and design patterns to build a maintainable and extensible system architecture.
 
@@ -20,10 +20,10 @@ The system follows a multi-layered architecture comprising the following layers:
 ## Business Process
 The proposed system aims to streamline various business processes of Hello Shoes Pvt. Ltd, including:
 - Sales Processing: Facilitate sales transactions, refunds, and payment processing. Maintain transaction history and generate invoices for customers.
-- Inventory Management: Track stock levels, update inventory data based on sales, and send alerts for low-stock items. Implement barcode scanning and RFID tagging for efficient inventory management.
-- Customer Management: Record customer details, including loyalty program membership, purchase history, and birthdays. Send personalized greetings and promotional offers to loyal customers.
-- Employee Management: Manage employee data, roles, and access levels across branches. Implement role-based access control (RBAC) and audit trails for accountability.
-- Admin Panel Functionality: Provide a centralized dashboard for monitoring sales performance, inventory status, and customer engagement metrics. Enable administrators to configure system settings and generate custom reports.
+- Inventory Management: Track stock levels, update inventoryEntity data based on sales, and send alerts for low-stock items. Implement barcode scanning and RFID tagging for efficient inventoryEntity management.
+- Customer Management: Record customerEntity details, including loyalty program membership, purchase history, and birthdays. Send personalized greetings and promotional offers to loyal customers.
+- Employee Management: Manage employeeEntity data, roles, and access levels across branches. Implement role-based access control (RBAC) and audit trails for accountability.
+- Admin Panel Functionality: Provide a centralized dashboard for monitoring sales performance, inventoryEntity status, and customerEntity engagement metrics. Enable administrators to configure system settings and generate custom reports.
 
 ## System Requirements
 The system must meet the following requirements:
@@ -49,7 +49,7 @@ To get started with the project, follow these steps:
 
 ## Contribution Guidelines
 Contributions to the project are welcome! Please follow the contribution guidelines:
-- Fork the repository and create a new branch for your feature or bug fix.
+- Fork the repository and create a new branchEntity for your feature or bug fix.
 - Make your changes and ensure all tests pass.
 - Submit a pull request with a detailed description of your changes and the rationale behind them.
 

@@ -2,45 +2,33 @@ package lk.ijse.helloshoebackend.entity;
 
 import jakarta.persistence.*;
 import lk.ijse.helloshoebackend.enums.Role;
-import lombok.AllArgsConstructor;
-import lombok.Builder;
-import lombok.Data;
-import lombok.NoArgsConstructor;
+import lombok.*;
 
 import java.util.List;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-20
- * @since 0.0.1
- */
-@Data
+@Entity
+@Getter
+@Setter
+@Builder
 @AllArgsConstructor
 @NoArgsConstructor
-@Builder
-@Entity
 @Table(name = "user")
 public class UserEntity {
     @Id
-    @Column(name = "username")
     private String username;
-
-    @Column(name = "password")
     private String password;
-
-    @Column(name = "role")
     @Enumerated(EnumType.STRING)
     private Role role;
 
     @OneToOne
     @JoinColumn(name = "empId", referencedColumnName = "empId")
-    private EmployeeEntity employee;
+    private EmployeeEntity employeeEntity;
 
-    @OneToMany(mappedBy = "user")
-    private List<CustomerEntity> customers;
+    @OneToMany(mappedBy = "userEntity")
+    private List<CustomerEntity> customerEntities;
 
-    @OneToMany(mappedBy = "user", cascade = CascadeType.ALL)
-    private List<SaleEntity> sales;
+    @OneToMany(mappedBy = "userEntity", cascade = CascadeType.ALL)
+    private List<SaleEntity> saleEntities;
 
     public UserEntity(String email, String password, Role role) {
         this.username = email;

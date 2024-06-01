@@ -5,23 +5,15 @@ import lk.ijse.helloshoebackend.entity.embedded.Address;
 import lk.ijse.helloshoebackend.enums.Gender;
 import lk.ijse.helloshoebackend.enums.Role;
 import lombok.AllArgsConstructor;
-import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.io.Serializable;
 import java.sql.Date;
 
-/**
- * @author Dewmith Mihisara
- * @date 2024-04-23
- * @since 0.0.1
- */
+@Data
 @AllArgsConstructor
 @NoArgsConstructor
-@Data
-@Builder
-public class EmployeeDTO implements Serializable {
+public class EmployeeDTO {
     private String empId;
     private String empName;
     @JsonFormat(shape = JsonFormat.Shape.STRING)

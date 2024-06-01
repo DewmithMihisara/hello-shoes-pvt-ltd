@@ -22,7 +22,7 @@ public class UserDetailsServiceImpl implements UserDetailsService {
         UserEntity user = userRepository.findByUsername(name).orElse(null);
 
         if(user == null) {
-            throw new UsernameNotFoundException("User not found with the given email");
+            throw new UsernameNotFoundException("UserEntity not found with the given email");
         }
 
         return org.springframework.security.core.userdetails.User.builder()
