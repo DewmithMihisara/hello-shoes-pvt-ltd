@@ -13,7 +13,11 @@ import org.springframework.stereotype.Service;
 
 import java.util.List;
 import java.util.stream.Collectors;
-
+/**
+ * @author Dewmith Mihisara
+ * @date 2024-04-23
+ * @since 0.0.1
+ */
 @Service
 public class SaleInventoryServiceImpl {
 

@@ -12,6 +12,12 @@ import org.hibernate.annotations.CreationTimestamp;
 import java.sql.Timestamp;
 import java.util.Date;
 
+/**
+ * @author Dewmith Mihisara
+ * @date 2024-04-23
+ * @since 0.0.1
+ */
+
 @Entity
 @Data
 @AllArgsConstructor

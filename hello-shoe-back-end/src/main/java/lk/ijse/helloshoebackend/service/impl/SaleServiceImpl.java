@@ -22,7 +22,11 @@ import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
-
+/**
+ * @author Dewmith Mihisara
+ * @date 2024-04-23
+ * @since 0.0.1
+ */
 @Service
 @RequiredArgsConstructor
 public class SaleServiceImpl implements SaleService {

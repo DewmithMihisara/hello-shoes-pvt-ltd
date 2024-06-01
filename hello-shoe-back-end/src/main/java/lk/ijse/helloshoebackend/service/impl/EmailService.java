@@ -12,6 +12,12 @@ import org.springframework.mail.javamail.MimeMessageHelper;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
+/**
+ * @author Dewmith Mihisara
+ * @date 2024-04-23
+ * @since 0.0.1
+ */
+
 @Service
 @Transactional
 public class EmailService {

@@ -4,7 +4,11 @@ import lk.ijse.helloshoebackend.dto.BranchDTO;
 import lk.ijse.helloshoebackend.entity.BranchEntity;
 
 import java.util.List;
-
+/**
+ * @author Dewmith Mihisara
+ * @date 2024-04-23
+ * @since 0.0.1
+ */
 public interface BranchService {
     boolean saveBranch(BranchDTO branchDTO);
 
