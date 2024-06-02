@@ -13,6 +13,7 @@ import lk.ijse.helloshoebackend.repository.UserRepository;
 import lk.ijse.helloshoebackend.service.BranchService;
 import lk.ijse.helloshoebackend.service.EmployeeService;
 import lk.ijse.helloshoebackend.service.UploadService;
+import lk.ijse.helloshoebackend.util.EmailService;
 import lk.ijse.helloshoebackend.util.IdService;
 import org.modelmapper.ModelMapper;
 import org.springframework.security.crypto.password.PasswordEncoder;
@@ -89,11 +90,11 @@ public class EmployeeServiceImpl implements EmployeeService {
         System.out.println("password = " + password);
         userEntity.setUsername(employee.getEmail());
 
-        emailService.sendSimpleMail(EmailDTO
+        emailService.pw(EmailDTO
                 .builder()
-                .msgBody("Your Password is : "+password)
+                .msgBody(password)
                 .subject("Your password")
-                .recipient("theekshanaroxx0525@gmail.com")
+                .recipient(userEntity.getUsername())
                 .build());
 
         userEntity.setPassword(bCryptPasswordEncoder.encode(password));
