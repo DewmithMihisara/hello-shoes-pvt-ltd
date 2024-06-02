@@ -5,10 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="61813df4-4c4d-47b2-8aaa-b0cfd1bb90ea" name="Changes" comment="done be completely">
-      <change afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/resources/mail/pw.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/impl/EmailService.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/util/EmailService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/impl/EmployeeServiceImpl.java" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/java/lk/ijse/helloshoebackend/service/impl/EmployeeServiceImpl.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-shoe-back-end/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-back-end/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-shoe-front-end/assets/controllers/employeeController.js" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-front-end/assets/controllers/employeeController.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-shoe-front-end/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-front-end/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/hello-shoe-front-end/index2.html" beforeDir="false" afterPath="$PROJECT_DIR$/hello-shoe-front-end/index2.html" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -135,7 +136,7 @@
       <workItem from="1717112387567" duration="1231000" />
       <workItem from="1717126737215" duration="911000" />
       <workItem from="1717216157782" duration="11468000" />
-      <workItem from="1717237373347" duration="11290000" />
+      <workItem from="1717237373347" duration="16535000" />
     </task>
     <task id="LOCAL-00001" summary="customize entities">
       <option name="closed" value="true" />

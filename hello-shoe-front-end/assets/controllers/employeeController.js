@@ -294,6 +294,7 @@ $("#btn-add-emp").click(function () {
         icon: "success",
         title: data,
       });
+      
     },
     error: function (error) {
       Swal.close();
@@ -363,7 +364,7 @@ function createEmployeeCard(employee) {
         <div class="row">
           <!-- Left side: Profile Picture -->
           <div class="pe-1 col-4 d-flex justify-content-center align-items-center bg-dark">
-            <img src="https://drive.google.com/thumbnail?id=${employee.profilePic}&sz=w1000" class="rounded-circle border border-white emp-loading-pic">
+            <img  style="height:100px" src="https://drive.google.com/thumbnail?id=${employee.profilePic}&sz=w1000" class="rounded-circle border border-white emp-loading-pic">
           </div>
           <!-- Right side: Employee Details -->
           <div class="col-8">
